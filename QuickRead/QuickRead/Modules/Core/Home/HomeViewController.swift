@@ -11,6 +11,20 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    private func setupView() {
+        
+        APIHandler.shared.getAllSources {
+            //
+        } failure: { _ in
+            //
+        }
+
+
+
+        
     }
 
 }
