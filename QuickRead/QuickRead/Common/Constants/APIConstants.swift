@@ -20,7 +20,7 @@ enum APIConstants {
     
     struct Parameters {
         
-        static let getAllArticles = ["items": 1]
+        static let getAllArticles = ["items": 20]
         
     }
     
