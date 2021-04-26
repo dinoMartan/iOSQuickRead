@@ -26,6 +26,14 @@ class HomeViewController: UIViewController {
     }
     
     private func setupView() {
+        
+        APIHandler.shared.getAllSources {
+            //
+        } failure: { _ in
+            //
+        }
+
+        
         fetchData()
         configureTableView()
     }

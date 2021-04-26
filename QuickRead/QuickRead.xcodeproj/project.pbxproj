@@ -24,6 +24,13 @@
 		3113F09F26359466004E9508 /* GetArticlesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113F09E26359466004E9508 /* GetArticlesResponse.swift */; };
 		3113F0A82635F3D9004E9508 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113F0A62635F3D8004E9508 /* ArticleTableViewCell.swift */; };
 		3113F0A92635F3D9004E9508 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3113F0A72635F3D8004E9508 /* ArticleTableViewCell.xib */; };
+		31B8FF6726371739002DA2DC /* OtherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF6626371739002DA2DC /* OtherTableViewCell.swift */; };
+		31B8FF6C2637218D002DA2DC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B8FF6B2637218D002DA2DC /* Login.storyboard */; };
+		31B8FF6F2637219B002DA2DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF6E2637219B002DA2DC /* LoginViewController.swift */; };
+		31B8FF722637245D002DA2DC /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF712637245D002DA2DC /* ForgotPasswordViewController.swift */; };
+		31B8FF7526372935002DA2DC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF7426372935002DA2DC /* RegisterViewController.swift */; };
+		31B8FF7826372F55002DA2DC /* StringCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF7726372F55002DA2DC /* StringCheck.swift */; };
+		31B8FF7B263735BB002DA2DC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF7A263735BB002DA2DC /* Profile.swift */; };
 		CC5979ECC103E489728F4D67 /* Pods_QuickRead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D356F814B626C0D28D13BA /* Pods_QuickRead.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +55,13 @@
 		3113F09E26359466004E9508 /* GetArticlesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArticlesResponse.swift; sourceTree = "<group>"; };
 		3113F0A62635F3D8004E9508 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		3113F0A72635F3D8004E9508 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		31B8FF6626371739002DA2DC /* OtherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTableViewCell.swift; sourceTree = "<group>"; };
+		31B8FF6B2637218D002DA2DC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		31B8FF6E2637219B002DA2DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		31B8FF712637245D002DA2DC /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		31B8FF7426372935002DA2DC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		31B8FF7726372F55002DA2DC /* StringCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCheck.swift; sourceTree = "<group>"; };
+		31B8FF7A263735BB002DA2DC /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		6D9809E1AF9A8E2F20FF1C03 /* Pods-QuickRead.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickRead.debug.xcconfig"; path = "Target Support Files/Pods-QuickRead/Pods-QuickRead.debug.xcconfig"; sourceTree = "<group>"; };
 		A2D356F814B626C0D28D13BA /* Pods_QuickRead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickRead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				3113F06D263588DB004E9508 /* APIHandler.swift */,
+				31B8FF7726372F55002DA2DC /* StringCheck.swift */,
+				31B8FF7A263735BB002DA2DC /* Profile.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -131,6 +147,7 @@
 		3113F0382634502E004E9508 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				31B8FF692637217A002DA2DC /* Other */,
 				3113F0702635896B004E9508 /* Core */,
 				3113F03D26345148004E9508 /* Menu */,
 			);
@@ -187,6 +204,7 @@
 			children = (
 				3113F04E26346CAC004E9508 /* Other.storyboard */,
 				3113F06526358358004E9508 /* OtherViewController.swift */,
+				31B8FF6626371739002DA2DC /* OtherTableViewCell.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -225,6 +243,25 @@
 				3113F0A72635F3D8004E9508 /* ArticleTableViewCell.xib */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		31B8FF692637217A002DA2DC /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				31B8FF6A26372182002DA2DC /* Login */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		31B8FF6A26372182002DA2DC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				31B8FF6B2637218D002DA2DC /* Login.storyboard */,
+				31B8FF6E2637219B002DA2DC /* LoginViewController.swift */,
+				31B8FF712637245D002DA2DC /* ForgotPasswordViewController.swift */,
+				31B8FF7426372935002DA2DC /* RegisterViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		364141DB4E947101ADA11CEF /* Pods */ = {
@@ -297,6 +334,7 @@
 			files = (
 				3113F02A26344FD3004E9508 /* Assets.xcassets in Resources */,
 				3113F05226346CBB004E9508 /* Home.storyboard in Resources */,
+				31B8FF6C2637218D002DA2DC /* Login.storyboard in Resources */,
 				3113F04F26346CAC004E9508 /* Other.storyboard in Resources */,
 				3113F04B26346C99004E9508 /* Sport.storyboard in Resources */,
 				3113F0A92635F3D9004E9508 /* ArticleTableViewCell.xib in Resources */,
@@ -353,16 +391,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B8FF7B263735BB002DA2DC /* Profile.swift in Sources */,
+				31B8FF6726371739002DA2DC /* OtherTableViewCell.swift in Sources */,
+				31B8FF7826372F55002DA2DC /* StringCheck.swift in Sources */,
 				3113F09F26359466004E9508 /* GetArticlesResponse.swift in Sources */,
 				3113F05826346D74004E9508 /* HomeViewController.swift in Sources */,
 				3113F02126344FD1004E9508 /* AppDelegate.swift in Sources */,
 				3113F06626358358004E9508 /* OtherViewController.swift in Sources */,
 				3113F0A82635F3D9004E9508 /* ArticleTableViewCell.swift in Sources */,
+				31B8FF7526372935002DA2DC /* RegisterViewController.swift in Sources */,
 				3113F06E263588DB004E9508 /* APIHandler.swift in Sources */,
 				3113F040263451CF004E9508 /* UIStoryboardExtension.swift in Sources */,
+				31B8FF722637245D002DA2DC /* ForgotPasswordViewController.swift in Sources */,
 				3113F09B26358DE7004E9508 /* APIConstants.swift in Sources */,
 				3113F0612634763C004E9508 /* SportViewController.swift in Sources */,
 				3113F02326344FD1004E9508 /* SceneDelegate.swift in Sources */,
+				31B8FF6F2637219B002DA2DC /* LoginViewController.swift in Sources */,
 				3113F05526346CF8004E9508 /* TabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
