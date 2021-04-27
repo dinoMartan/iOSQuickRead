@@ -31,6 +31,11 @@
 		31B8FF7526372935002DA2DC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF7426372935002DA2DC /* RegisterViewController.swift */; };
 		31B8FF7826372F55002DA2DC /* StringCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF7726372F55002DA2DC /* StringCheck.swift */; };
 		31B8FF7B263735BB002DA2DC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF7A263735BB002DA2DC /* Profile.swift */; };
+		31B8FF7E26386DF0002DA2DC /* SourcesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF7D26386DF0002DA2DC /* SourcesResponse.swift */; };
+		31B8FF8226387072002DA2DC /* Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF8126387072002DA2DC /* Sources.swift */; };
+		31B8FF852638728A002DA2DC /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF842638728A002DA2DC /* CategoriesResponse.swift */; };
+		31B8FF8926387A90002DA2DC /* Articles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B8FF8826387A90002DA2DC /* Articles.storyboard */; };
+		31B8FF8C26387A9A002DA2DC /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF8B26387A9A002DA2DC /* ArticlesViewController.swift */; };
 		CC5979ECC103E489728F4D67 /* Pods_QuickRead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D356F814B626C0D28D13BA /* Pods_QuickRead.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +67,11 @@
 		31B8FF7426372935002DA2DC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		31B8FF7726372F55002DA2DC /* StringCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCheck.swift; sourceTree = "<group>"; };
 		31B8FF7A263735BB002DA2DC /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		31B8FF7D26386DF0002DA2DC /* SourcesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesResponse.swift; sourceTree = "<group>"; };
+		31B8FF8126387072002DA2DC /* Sources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources.swift; sourceTree = "<group>"; };
+		31B8FF842638728A002DA2DC /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
+		31B8FF8826387A90002DA2DC /* Articles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Articles.storyboard; sourceTree = "<group>"; };
+		31B8FF8B26387A9A002DA2DC /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		6D9809E1AF9A8E2F20FF1C03 /* Pods-QuickRead.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickRead.debug.xcconfig"; path = "Target Support Files/Pods-QuickRead/Pods-QuickRead.debug.xcconfig"; sourceTree = "<group>"; };
 		A2D356F814B626C0D28D13BA /* Pods_QuickRead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickRead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -127,6 +137,7 @@
 		3113F03626345023004E9508 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				31B8FF802638704A002DA2DC /* Data */,
 				3113F09D26359446004E9508 /* Models */,
 				3113F09926358DD9004E9508 /* Constants */,
 				3113F03E2634519A004E9508 /* Extensions */,
@@ -212,6 +223,7 @@
 		3113F0702635896B004E9508 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				31B8FF8726387A84002DA2DC /* Articles */,
 				3113F0A126359C2D004E9508 /* Table */,
 				3113F04D26346CA1004E9508 /* Other */,
 				3113F04926346C90004E9508 /* Sport */,
@@ -232,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				3113F09E26359466004E9508 /* GetArticlesResponse.swift */,
+				31B8FF7D26386DF0002DA2DC /* SourcesResponse.swift */,
+				31B8FF842638728A002DA2DC /* CategoriesResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +276,23 @@
 				31B8FF7426372935002DA2DC /* RegisterViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		31B8FF802638704A002DA2DC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				31B8FF8126387072002DA2DC /* Sources.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		31B8FF8726387A84002DA2DC /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				31B8FF8826387A90002DA2DC /* Articles.storyboard */,
+				31B8FF8B26387A9A002DA2DC /* ArticlesViewController.swift */,
+			);
+			path = Articles;
 			sourceTree = "<group>";
 		};
 		364141DB4E947101ADA11CEF /* Pods */ = {
@@ -333,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3113F02A26344FD3004E9508 /* Assets.xcassets in Resources */,
+				31B8FF8926387A90002DA2DC /* Articles.storyboard in Resources */,
 				3113F05226346CBB004E9508 /* Home.storyboard in Resources */,
 				31B8FF6C2637218D002DA2DC /* Login.storyboard in Resources */,
 				3113F04F26346CAC004E9508 /* Other.storyboard in Resources */,
@@ -394,6 +426,7 @@
 				31B8FF7B263735BB002DA2DC /* Profile.swift in Sources */,
 				31B8FF6726371739002DA2DC /* OtherTableViewCell.swift in Sources */,
 				31B8FF7826372F55002DA2DC /* StringCheck.swift in Sources */,
+				31B8FF8C26387A9A002DA2DC /* ArticlesViewController.swift in Sources */,
 				3113F09F26359466004E9508 /* GetArticlesResponse.swift in Sources */,
 				3113F05826346D74004E9508 /* HomeViewController.swift in Sources */,
 				3113F02126344FD1004E9508 /* AppDelegate.swift in Sources */,
@@ -403,11 +436,14 @@
 				3113F06E263588DB004E9508 /* APIHandler.swift in Sources */,
 				3113F040263451CF004E9508 /* UIStoryboardExtension.swift in Sources */,
 				31B8FF722637245D002DA2DC /* ForgotPasswordViewController.swift in Sources */,
+				31B8FF852638728A002DA2DC /* CategoriesResponse.swift in Sources */,
 				3113F09B26358DE7004E9508 /* APIConstants.swift in Sources */,
 				3113F0612634763C004E9508 /* SportViewController.swift in Sources */,
 				3113F02326344FD1004E9508 /* SceneDelegate.swift in Sources */,
 				31B8FF6F2637219B002DA2DC /* LoginViewController.swift in Sources */,
 				3113F05526346CF8004E9508 /* TabBarViewController.swift in Sources */,
+				31B8FF8226387072002DA2DC /* Sources.swift in Sources */,
+				31B8FF7E26386DF0002DA2DC /* SourcesResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

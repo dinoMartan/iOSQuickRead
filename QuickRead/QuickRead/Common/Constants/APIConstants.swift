@@ -15,8 +15,12 @@ enum APIConstants {
     struct Urls {
         
         static let getAllArticles = endpoint + "/getAllArticles"
-        static let getAllSources = endpoint + "/getAllSources"
+        static let getAllSources = endpoint + "/getSources"
+        static let getAllCategories = endpoint + "/getAllCategories"
+        static let getArticlesForCategory = endpoint + "/getAllArticlesForCategory"
+        
         static let registerUser = userEndpoint + "/signUp"
+        static let loginUser = userEndpoint + "/login"
         
     }
     

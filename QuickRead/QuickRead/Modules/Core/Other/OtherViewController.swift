@@ -15,9 +15,7 @@ class OtherViewController: UIViewController {
     
     //MARK: - Private properties
     
-    private var categories: [String] {
-        ["Sport", "Vijesti", "Tech", "Drava", "Kak je ovo useless app"]
-    }
+    private var categories: [String] = []
     
     //MARK: - Lifecycle
 
@@ -28,11 +26,22 @@ class OtherViewController: UIViewController {
     
     private func setupView() {
         configureTableView()
+        fetchData()
     }
     
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    private func fetchData() {
+        APIHandler.shared.getAllCategories { categoriesResponse in
+            self.categories = categoriesResponse.categories
+            self.tableView.reloadData()
+        } failure: { error in
+            // to do - handle error
+        }
+
     }
 
 }
@@ -53,6 +62,9 @@ extension OtherViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let articlesViewController = UIStoryboard.init(name: "Articles", bundle: nil).instantiateViewController(identifier: "articles") as? ArticlesViewController else { return  }
+        articlesViewController.setCategory(category: categories[indexPath.row])
+        navigationController?.pushViewController(articlesViewController, animated: true)
     }
     
 }

@@ -16,10 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        if Profile.shared.getToken() != nil {
+        Profile.shared.silentLogin {
             window.rootViewController = UIStoryboard.init(name: "Menu", bundle: nil).instantiateViewController(withIdentifier: "menu") as? TabBarViewController
-        }
-        else {
+        } failure: { _ in
             window.rootViewController = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "login") as? LoginViewController
         }
         

@@ -1,66 +1,60 @@
 //
-//  HomeViewController.swift
+//  ArticlesViewController.swift
 //  QuickRead
 //
-//  Created by Dino Martan on 24/04/2021.
+//  Created by Dino Martan on 27/04/2021.
 //
 
 import UIKit
 import SafariServices
 
-class HomeViewController: UIViewController {
+class ArticlesViewController: UIViewController {
     
     //MARK: - IBOutlets
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Private properties
     
+    private var category: String?
     private var articles: [Article] = []
     
     //MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
+    func setCategory(category: String) {
+        self.category = category
+    }
+    
     private func setupView() {
-        fetchData()
+        fetchArticles()
         configureTableView()
     }
     
-    private func fetchData() {
-        fetchSources()
-        fetchNews()
-    }
-    
-    private func fetchSources() {
-        APIHandler.shared.getAllSources { sourcesResponse in
-            Sources.shared.setSources(sources: sourcesResponse.sources)
+    private func fetchArticles() {
+        guard let category = category else { return }
+        APIHandler.shared.getArticlesForCategory(category: category) {
+            //
         } failure: { error in
             // to do - handle error
         }
+
     }
-    
-    private func fetchNews() {
-        APIHandler.shared.getAllArticles { getAllArticlesResponse in
-            self.articles = getAllArticlesResponse.articles
-            self.tableView.reloadData()
-        } failure: { error in
-            // to do - handle error
-        }
-    }
-    
+
     private func configureTableView() {
         tableView.register(UINib(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: ArticleTableViewCell.identifier)
-        tableView.dataSource = self
         tableView.delegate = self
+        tableView.dataSource = self
     }
-
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+//MARK: - TableView Delegate, DataSource -
+
+extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
@@ -74,15 +68,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 600
-    }
-    
 }
 
-
-
-extension HomeViewController: ArticleTableViewCellDelegate {
+extension ArticlesViewController: ArticleTableViewCellDelegate {
     
     func didTapShowArticle(url: URL) {
         let safariViewController = SFSafariViewController(url: url)
@@ -90,5 +78,3 @@ extension HomeViewController: ArticleTableViewCellDelegate {
     }
     
 }
-
-

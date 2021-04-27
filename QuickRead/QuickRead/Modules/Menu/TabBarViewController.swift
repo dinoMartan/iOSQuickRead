@@ -41,7 +41,6 @@ class TabBarViewController: UITabBarController {
         guard let otherViewController = UIStoryboard.init(name: "Other", bundle: nil).instantiateViewController(identifier: "other") as? OtherViewController else { return nil }
         let otherNavigationController = UINavigationController(rootViewController: otherViewController)
         otherNavigationController.tabBarItem = UITabBarItem(title: "Other", image: UIImage(systemName: "house"), tag: 3)
-        otherNavigationController.navigationBar.isHidden = true
         otherNavigationController.navigationBar.prefersLargeTitles = true
         return otherNavigationController
     }
