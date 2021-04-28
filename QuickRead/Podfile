@@ -8,5 +8,6 @@ target 'QuickRead' do
   # Pods for QuickRead
   pod 'Alamofire'
   pod 'SDWebImage'
+  #pod 'SkeletonView'
 
 end

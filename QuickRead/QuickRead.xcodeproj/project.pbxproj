@@ -37,6 +37,8 @@
 		31B8FF8926387A90002DA2DC /* Articles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B8FF8826387A90002DA2DC /* Articles.storyboard */; };
 		31B8FF8C26387A9A002DA2DC /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF8B26387A9A002DA2DC /* ArticlesViewController.swift */; };
 		31B8FF8F26397C88002DA2DC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF8E26397C88002DA2DC /* StringExtension.swift */; };
+		31B8FFA12639C9B7002DA2DC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B8FFA02639C9B7002DA2DC /* Profile.storyboard */; };
+		31B8FFA42639C9C3002DA2DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FFA32639C9C3002DA2DC /* ProfileViewController.swift */; };
 		CC5979ECC103E489728F4D67 /* Pods_QuickRead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D356F814B626C0D28D13BA /* Pods_QuickRead.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		31B8FF8826387A90002DA2DC /* Articles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Articles.storyboard; sourceTree = "<group>"; };
 		31B8FF8B26387A9A002DA2DC /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		31B8FF8E26397C88002DA2DC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		31B8FFA02639C9B7002DA2DC /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		31B8FFA32639C9C3002DA2DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6D9809E1AF9A8E2F20FF1C03 /* Pods-QuickRead.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickRead.debug.xcconfig"; path = "Target Support Files/Pods-QuickRead/Pods-QuickRead.debug.xcconfig"; sourceTree = "<group>"; };
 		A2D356F814B626C0D28D13BA /* Pods_QuickRead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickRead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -226,6 +230,7 @@
 		3113F0702635896B004E9508 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				31B8FF9F2639C9AE002DA2DC /* Profile */,
 				31B8FF8726387A84002DA2DC /* Articles */,
 				3113F0A126359C2D004E9508 /* Table */,
 				3113F04D26346CA1004E9508 /* Categories */,
@@ -296,6 +301,15 @@
 				31B8FF8B26387A9A002DA2DC /* ArticlesViewController.swift */,
 			);
 			path = Articles;
+			sourceTree = "<group>";
+		};
+		31B8FF9F2639C9AE002DA2DC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				31B8FFA02639C9B7002DA2DC /* Profile.storyboard */,
+				31B8FFA32639C9C3002DA2DC /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		364141DB4E947101ADA11CEF /* Pods */ = {
@@ -372,6 +386,7 @@
 				31B8FF6C2637218D002DA2DC /* Login.storyboard in Resources */,
 				3113F04F26346CAC004E9508 /* Other.storyboard in Resources */,
 				3113F04B26346C99004E9508 /* Sport.storyboard in Resources */,
+				31B8FFA12639C9B7002DA2DC /* Profile.storyboard in Resources */,
 				3113F0A92635F3D9004E9508 /* ArticleTableViewCell.xib in Resources */,
 				3113F04626346BD5004E9508 /* Menu.storyboard in Resources */,
 			);
@@ -441,6 +456,7 @@
 				31B8FF722637245D002DA2DC /* ForgotPasswordViewController.swift in Sources */,
 				31B8FF852638728A002DA2DC /* CategoriesResponse.swift in Sources */,
 				3113F09B26358DE7004E9508 /* APIConstants.swift in Sources */,
+				31B8FFA42639C9C3002DA2DC /* ProfileViewController.swift in Sources */,
 				3113F0612634763C004E9508 /* SportViewController.swift in Sources */,
 				3113F02326344FD1004E9508 /* SceneDelegate.swift in Sources */,
 				31B8FF6F2637219B002DA2DC /* LoginViewController.swift in Sources */,

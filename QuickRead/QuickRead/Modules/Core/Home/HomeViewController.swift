@@ -23,18 +23,17 @@ class HomeViewController: UIViewController {
     }
     
     private func setupView() {
-        fetchData()
-        presentArticles()
+        fetchSources {
+            self.presentArticles()
+        }
     }
     
-    private func fetchData() {
-        fetchSources()
-    }
-    
-    private func fetchSources() {
+    private func fetchSources(completion: @escaping (() -> Void)) {
         APIHandler.shared.getAllSources { sourcesResponse in
             Sources.shared.setSources(sources: sourcesResponse.sources)
+            completion()
         } failure: { error in
+            completion()
             // to do - handle error
         }
     }

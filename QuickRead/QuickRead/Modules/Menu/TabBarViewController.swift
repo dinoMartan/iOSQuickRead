@@ -15,8 +15,9 @@ class TabBarViewController: UITabBarController {
     }
     
     private func setupView() {
-        guard let homeViewController = setupHome(), let sportViewController = setupSport(), let otherViewController = setupCategories() else { return }
-        setViewControllers([sportViewController, homeViewController, otherViewController], animated: true)
+        delegate = self
+        guard let homeViewController = setupHome(), let sportViewController = setupSport(), let otherViewController = setupCategories(), let profileViewController = setupProfile() else { return }
+        setViewControllers([sportViewController, homeViewController, otherViewController, profileViewController], animated: true)
         selectedIndex = 1
     }
     
@@ -43,6 +44,22 @@ class TabBarViewController: UITabBarController {
         otherNavigationController.tabBarItem = UITabBarItem(title: "Categories", image: UIImage(systemName: "house"), tag: 3)
         otherNavigationController.navigationBar.prefersLargeTitles = true
         return otherNavigationController
+    }
+    
+    private func setupProfile()  -> UIViewController? {
+        guard let profileViewController = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(identifier: "profile") as? ProfileViewController else { return nil }
+        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
+        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "house"), tag: 4)
+        profileNavigationController.navigationBar.prefersLargeTitles = true
+        return profileNavigationController
+    }
+    
+}
+
+extension TabBarViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        viewController != selectedViewController
     }
     
 }

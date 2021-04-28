@@ -10,15 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="articleCell" rowHeight="600" id="KGk-i7-Jjw" customClass="ArticleTableViewCell" customModule="QuickRead" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="595"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="articleCell" rowHeight="700" id="KGk-i7-Jjw" customClass="ArticleTableViewCell" customModule="QuickRead" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="595"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7N5-wB-HYM">
-                        <rect key="frame" x="25" y="65" width="364" height="210"/>
+                        <rect key="frame" x="25" y="65" width="364" height="235"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="uAg-FO-4Rl">
                         <rect key="frame" x="15" y="5" width="384" height="50"/>
@@ -27,7 +27,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cph-MW-WUV">
-                        <rect key="frame" x="35" y="285" width="344" height="20.5"/>
+                        <rect key="frame" x="35" y="310" width="344" height="20.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dim-dW-CjK">
                                 <rect key="frame" x="0.0" y="0.0" width="167" height="20.5"/>
@@ -44,7 +44,7 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="9qf-Ss-JHi">
-                        <rect key="frame" x="15" y="555" width="384" height="30"/>
+                        <rect key="frame" x="15" y="660" width="384" height="30"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDI-b4-4tp">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
@@ -65,7 +65,7 @@
                         </subviews>
                     </stackView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nM-Jz-WDR">
-                        <rect key="frame" x="15" y="310.5" width="384" height="239.5"/>
+                        <rect key="frame" x="15" y="335.5" width="384" height="319.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
@@ -87,7 +87,7 @@
                     <constraint firstItem="uAg-FO-4Rl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="WIJ-0c-vUR"/>
                     <constraint firstAttribute="trailing" secondItem="7N5-wB-HYM" secondAttribute="trailing" constant="25" id="ZI2-48-cW0"/>
                     <constraint firstAttribute="trailing" secondItem="uAg-FO-4Rl" secondAttribute="trailing" constant="15" id="abs-6L-BgA"/>
-                    <constraint firstAttribute="bottom" secondItem="7N5-wB-HYM" secondAttribute="bottom" constant="320" id="bNK-o5-3Mt"/>
+                    <constraint firstAttribute="bottom" secondItem="7N5-wB-HYM" secondAttribute="bottom" constant="400" id="bNK-o5-3Mt"/>
                     <constraint firstItem="9qf-Ss-JHi" firstAttribute="top" secondItem="1nM-Jz-WDR" secondAttribute="bottom" constant="5" id="cmS-Vk-glU"/>
                     <constraint firstAttribute="trailing" secondItem="9qf-Ss-JHi" secondAttribute="trailing" constant="15" id="ePQ-mN-J0d"/>
                     <constraint firstItem="1nM-Jz-WDR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="kOT-p0-ySw"/>

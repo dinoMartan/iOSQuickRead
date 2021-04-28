@@ -18,6 +18,7 @@ enum APIConstants {
         static let getAllSources = endpoint + "/getSources"
         static let getAllCategories = endpoint + "/getAllCategories"
         static let getArticlesForCategory = endpoint + "/getAllArticlesForCategory"
+        static let getArticlesForSourceCategory = endpoint + "/getAllArticlesFromSourceCategory"
         
         static let registerUser = userEndpoint + "/signUp"
         static let loginUser = userEndpoint + "/login"

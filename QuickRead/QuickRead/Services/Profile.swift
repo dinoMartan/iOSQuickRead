@@ -47,7 +47,7 @@ final class Profile {
     
     func tokenDidExpire() -> Bool {
         guard let expirationDate = expirationDate else { return true }
-        if expirationDate >= Date() { return true }
+        if expirationDate <= Date() { return true }
         else { return false }
     }
     

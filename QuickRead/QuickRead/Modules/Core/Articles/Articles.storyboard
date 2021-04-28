@@ -19,7 +19,35 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5D6-7h-hIv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="vWf-PY-7tz">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="on0-01-Spg">
+                                            <rect key="frame" x="10" y="10" width="394" height="90"/>
+                                        </pickerView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="on0-01-Spg" secondAttribute="trailing" constant="10" id="J0L-wc-Esh"/>
+                                        <constraint firstItem="on0-01-Spg" firstAttribute="leading" secondItem="vWf-PY-7tz" secondAttribute="leading" constant="10" id="bBL-nY-uU7"/>
+                                        <constraint firstAttribute="bottom" secondItem="on0-01-Spg" secondAttribute="bottom" constant="10" id="cfY-Yq-X2a"/>
+                                        <constraint firstItem="on0-01-Spg" firstAttribute="top" secondItem="vWf-PY-7tz" secondAttribute="top" constant="10" id="hoE-Vh-VtC"/>
+                                    </constraints>
+                                </view>
                             </tableView>
+                            <view contentMode="scaleToFill" id="KI8-ol-NSK">
+                                <rect key="frame" x="0.0" y="157" width="414" height="739"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="Dw9-0t-Pdk">
+                                        <rect key="frame" x="156" y="343" width="102" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="pUm-sg-E9N"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l4k-SO-txe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -31,12 +59,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Dw9-0t-Pdk" id="m8D-1L-vuV"/>
+                        <outlet property="activityIndicatorView" destination="KI8-ol-NSK" id="uoP-6d-TjH"/>
+                        <outlet property="sourcePickerView" destination="on0-01-Spg" id="wy2-UO-bI6"/>
                         <outlet property="tableView" destination="5D6-7h-hIv" id="RZm-CD-Y6Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7W1-P6-u1r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-601" y="35"/>
+            <point key="canvasLocation" x="-601.44927536231887" y="34.821428571428569"/>
         </scene>
     </scenes>
     <resources>

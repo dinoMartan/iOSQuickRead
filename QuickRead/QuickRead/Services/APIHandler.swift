@@ -55,6 +55,7 @@ final class APIHandler {
         
         alamofire.request(APIConstants.Urls.loginUser, method: .post, parameters: parameters)
             .responseJSON { response in
+                debugPrint(response)
                 switch response.result {
                 case .success(_):
                     success(response.response?.headers["Authorization"])
@@ -79,12 +80,37 @@ final class APIHandler {
             }
     }
     
-    func getArticlesForCategory(category: String, success: @escaping ((GetArticlesResponse) -> Void), failure: @escaping ((Error) -> Void)) {
+    func getArticlesForCategory(page: Int, category: String, success: @escaping ((GetArticlesResponse) -> Void), failure: @escaping ((Error) -> Void)) {
         checkToken()
         
-        let parameters: [String: String] = ["category": category]
+        let parameters: [String: Any] = [
+            "category": category,
+            "items": 20,
+            "page": page
+        ]
         
         alamofire.request(APIConstants.Urls.getArticlesForCategory, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            .responseDecodable(of: GetArticlesResponse.self) { response in
+                switch response.result {
+                case .success(let articlesResponse):
+                    success(articlesResponse)
+                case .failure(let error):
+                    failure(error)
+                }
+            }
+    }
+    
+    func getArticlesForSourceCategory(page: Int, source: String, category: String, success: @escaping ((GetArticlesResponse) -> Void), failure: @escaping ((Error) -> Void)) {
+        checkToken()
+        
+        let parameters: [String: Any] = [
+            "page": page,
+            "category": category,
+            "idSource": source,
+            "items": 10
+        ]
+        
+        alamofire.request(APIConstants.Urls.getArticlesForSourceCategory, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
             .responseDecodable(of: GetArticlesResponse.self) { response in
                 switch response.result {
                 case .success(let articlesResponse):
@@ -134,7 +160,6 @@ final class APIHandler {
             } failure: { _ in
                 //
             }
-
         }
     }
     
