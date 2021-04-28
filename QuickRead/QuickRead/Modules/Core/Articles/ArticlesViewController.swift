@@ -38,7 +38,7 @@ class ArticlesViewController: UIViewController {
     
     private func setTitle() {
         guard let title = category else { return }
-        self.title = title
+        self.title = String.titleCase(title)()
     }
     
     private func fetchArticles() {

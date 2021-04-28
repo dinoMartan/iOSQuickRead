@@ -15,7 +15,7 @@ class TabBarViewController: UITabBarController {
     }
     
     private func setupView() {
-        guard let homeViewController = setupHome(), let sportViewController = setupSport(), let otherViewController = setupOther() else { return }
+        guard let homeViewController = setupHome(), let sportViewController = setupSport(), let otherViewController = setupCategories() else { return }
         setViewControllers([sportViewController, homeViewController, otherViewController], animated: true)
         selectedIndex = 1
     }
@@ -32,15 +32,15 @@ class TabBarViewController: UITabBarController {
         guard let sportViewController = UIStoryboard.init(name: "Sport", bundle: nil).instantiateViewController(identifier: "sport") as? SportViewController else { return nil }
         let sportNavigationController = UINavigationController(rootViewController: sportViewController)
         sportViewController.tabBarItem = UITabBarItem(title: "Sport", image: UIImage(systemName: "house"), tag: 2)
-        sportNavigationController.navigationBar.isHidden = true
         sportNavigationController.navigationBar.prefersLargeTitles = true
+        sportNavigationController.navigationBar.isHidden = true
         return sportNavigationController
     }
     
-    private func setupOther()  -> UIViewController? {
+    private func setupCategories()  -> UIViewController? {
         guard let otherViewController = UIStoryboard.init(name: "Other", bundle: nil).instantiateViewController(identifier: "other") as? OtherViewController else { return nil }
         let otherNavigationController = UINavigationController(rootViewController: otherViewController)
-        otherNavigationController.tabBarItem = UITabBarItem(title: "Other", image: UIImage(systemName: "house"), tag: 3)
+        otherNavigationController.tabBarItem = UITabBarItem(title: "Categories", image: UIImage(systemName: "house"), tag: 3)
         otherNavigationController.navigationBar.prefersLargeTitles = true
         return otherNavigationController
     }

@@ -36,6 +36,7 @@
 		31B8FF852638728A002DA2DC /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF842638728A002DA2DC /* CategoriesResponse.swift */; };
 		31B8FF8926387A90002DA2DC /* Articles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B8FF8826387A90002DA2DC /* Articles.storyboard */; };
 		31B8FF8C26387A9A002DA2DC /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF8B26387A9A002DA2DC /* ArticlesViewController.swift */; };
+		31B8FF8F26397C88002DA2DC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF8E26397C88002DA2DC /* StringExtension.swift */; };
 		CC5979ECC103E489728F4D67 /* Pods_QuickRead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D356F814B626C0D28D13BA /* Pods_QuickRead.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		31B8FF842638728A002DA2DC /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
 		31B8FF8826387A90002DA2DC /* Articles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Articles.storyboard; sourceTree = "<group>"; };
 		31B8FF8B26387A9A002DA2DC /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		31B8FF8E26397C88002DA2DC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6D9809E1AF9A8E2F20FF1C03 /* Pods-QuickRead.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickRead.debug.xcconfig"; path = "Target Support Files/Pods-QuickRead/Pods-QuickRead.debug.xcconfig"; sourceTree = "<group>"; };
 		A2D356F814B626C0D28D13BA /* Pods_QuickRead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickRead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				3113F03F263451CF004E9508 /* UIStoryboardExtension.swift */,
+				31B8FF8E26397C88002DA2DC /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,14 +213,14 @@
 			path = Sport;
 			sourceTree = "<group>";
 		};
-		3113F04D26346CA1004E9508 /* Other */ = {
+		3113F04D26346CA1004E9508 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				3113F04E26346CAC004E9508 /* Other.storyboard */,
 				3113F06526358358004E9508 /* OtherViewController.swift */,
 				31B8FF6626371739002DA2DC /* OtherTableViewCell.swift */,
 			);
-			path = Other;
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		3113F0702635896B004E9508 /* Core */ = {
@@ -225,7 +228,7 @@
 			children = (
 				31B8FF8726387A84002DA2DC /* Articles */,
 				3113F0A126359C2D004E9508 /* Table */,
-				3113F04D26346CA1004E9508 /* Other */,
+				3113F04D26346CA1004E9508 /* Categories */,
 				3113F04926346C90004E9508 /* Sport */,
 				3113F04826346C8C004E9508 /* Home */,
 			);
@@ -443,6 +446,7 @@
 				31B8FF6F2637219B002DA2DC /* LoginViewController.swift in Sources */,
 				3113F05526346CF8004E9508 /* TabBarViewController.swift in Sources */,
 				31B8FF8226387072002DA2DC /* Sources.swift in Sources */,
+				31B8FF8F26397C88002DA2DC /* StringExtension.swift in Sources */,
 				31B8FF7E26386DF0002DA2DC /* SourcesResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

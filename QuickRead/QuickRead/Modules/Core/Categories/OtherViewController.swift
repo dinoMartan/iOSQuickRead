@@ -56,7 +56,10 @@ extension OtherViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OtherTableViewCell.identifier) as? OtherTableViewCell else { return UITableViewCell() }
-        cell.configureCell(category: categories[indexPath.row])
+        
+        let category = categories[indexPath.row]
+        let newValue = String.titleCase(category)()
+        cell.configureCell(category: newValue)
         return cell
     }
     
