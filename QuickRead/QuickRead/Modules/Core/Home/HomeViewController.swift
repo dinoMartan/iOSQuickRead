@@ -10,12 +10,9 @@ import SafariServices
 
 class HomeViewController: UIViewController {
     
-    //MARK: - IBOutlets
-
-    @IBOutlet weak var tableView: UITableView!
-    
     //MARK: - Private properties
     
+    private let category = "vijesti"
     private var articles: [Article] = []
     
     //MARK: - Lifecycle
@@ -27,12 +24,11 @@ class HomeViewController: UIViewController {
     
     private func setupView() {
         fetchData()
-        configureTableView()
+        presentArticles()
     }
     
     private func fetchData() {
         fetchSources()
-        fetchNews()
     }
     
     private func fetchSources() {
@@ -43,52 +39,10 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func fetchNews() {
-        APIHandler.shared.getAllArticles { getAllArticlesResponse in
-            self.articles = getAllArticlesResponse.articles
-            self.tableView.reloadData()
-        } failure: { error in
-            // to do - handle error
-        }
-    }
-    
-    private func configureTableView() {
-        tableView.register(UINib(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: ArticleTableViewCell.identifier)
-        tableView.dataSource = self
-        tableView.delegate = self
+    private func presentArticles() {
+        guard let articlesViewController = UIStoryboard.init(name: "Articles", bundle: nil).instantiateViewController(identifier: "articles") as? ArticlesViewController else { return  }
+        articlesViewController.setCategory(category: category)
+        navigationController?.pushViewController(articlesViewController, animated: true)
     }
 
 }
-
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier) as? ArticleTableViewCell else { return UITableViewCell() }
-        cell.configureCell(article: articles[indexPath.row])
-        cell.selectionStyle = .none
-        cell.delegate = self
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 600
-    }
-    
-}
-
-
-
-extension HomeViewController: ArticleTableViewCellDelegate {
-    
-    func didTapShowArticle(url: URL) {
-        let safariViewController = SFSafariViewController(url: url)
-        present(safariViewController, animated: true, completion: nil)
-    }
-    
-}
-
-

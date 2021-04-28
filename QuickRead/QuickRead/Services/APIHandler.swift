@@ -79,17 +79,16 @@ final class APIHandler {
             }
     }
     
-    func getArticlesForCategory(category: String, success: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) {
+    func getArticlesForCategory(category: String, success: @escaping ((GetArticlesResponse) -> Void), failure: @escaping ((Error) -> Void)) {
         checkToken()
         
         let parameters: [String: String] = ["category": category]
         
         alamofire.request(APIConstants.Urls.getArticlesForCategory, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
-            .responseJSON { response in
-                debugPrint(response)
+            .responseDecodable(of: GetArticlesResponse.self) { response in
                 switch response.result {
                 case .success(let articlesResponse):
-                    success()
+                    success(articlesResponse)
                 case .failure(let error):
                     failure(error)
                 }

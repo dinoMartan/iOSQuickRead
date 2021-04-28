@@ -31,17 +31,25 @@ class ArticlesViewController: UIViewController {
     }
     
     private func setupView() {
+        setTitle()
         fetchArticles()
         configureTableView()
     }
     
+    private func setTitle() {
+        guard let title = category else { return }
+        self.title = title
+    }
+    
     private func fetchArticles() {
         guard let category = category else { return }
-        APIHandler.shared.getArticlesForCategory(category: category) {
-            //
+        APIHandler.shared.getArticlesForCategory(category: category) { getArticlesResponse in
+            self.articles = getArticlesResponse.articles
+            self.tableView.reloadData()
         } failure: { error in
             // to do - handle error
         }
+
 
     }
 
@@ -66,6 +74,10 @@ extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.delegate = self
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 600
     }
     
 }
