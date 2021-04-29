@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
 
 private extension LoginViewController {
     
-    private func loginUser(username: String, password: String, success: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) {
+    private func loginUser(username: String, password: String, success: @escaping (() -> Void), failure: @escaping ((Error?) -> Void)) {
         let profile = Profile.shared
         profile.saveLoginData(username: username, password: password)
         profile.silentLogin {
@@ -41,6 +41,10 @@ private extension LoginViewController {
 //MARK: - IBActions -
 
 extension LoginViewController {
+    
+    @IBAction func didTapAround(_ sender: Any) {
+        view.endEditing(true)
+    }
     
     @IBAction func didTapLoginButton(_ sender: Any) {
         guard let username = usernameTextField.text, let password = passwordTextField.text else { return }
@@ -57,6 +61,7 @@ extension LoginViewController {
     
     @IBAction func didTapForgotPasswordButton(_ sender: Any) {
         guard let forgotPasswordViewController = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(identifier: "forgotPassword") as? ForgotPasswordViewController else { return }
+        forgotPasswordViewController.delegate = self
         present(forgotPasswordViewController, animated: true, completion: nil)
     }
     
@@ -82,5 +87,21 @@ extension LoginViewController: RegisterViewControllerDelegate {
         }
 
     }
+    
+}
+
+extension LoginViewController: ForgotPasswordViewControllerDelegate {
+    
+    func showPasswordReset() {
+        guard let resetPasswordViewController = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(identifier: "resetPassword") as? ResetPasswordViewController else { return }
+        resetPasswordViewController.delegate = self
+        self.present(resetPasswordViewController, animated: true, completion: nil)
+    }
+    
+}
+
+extension LoginViewController: ResetPasswordViewControllerDelegate {
+    
+  
     
 }

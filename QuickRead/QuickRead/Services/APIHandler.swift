@@ -55,10 +55,26 @@ final class APIHandler {
         
         alamofire.request(APIConstants.Urls.loginUser, method: .post, parameters: parameters)
             .responseJSON { response in
-                debugPrint(response)
                 switch response.result {
                 case .success(_):
                     success(response.response?.headers["Authorization"])
+                case .failure(let error):
+                    failure(error)
+                }
+            }
+    }
+    
+    func forgotPassword(email: String, success: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) {
+        
+        let parameters = [ "email": email ]
+        
+        alamofire.request(APIConstants.Urls.forgotPassword, method: .post, parameters: parameters)
+            .validate()
+            .response { response in
+                debugPrint(response)
+                switch response.result {
+                case .success(_):
+                    success()
                 case .failure(let error):
                     failure(error)
                 }

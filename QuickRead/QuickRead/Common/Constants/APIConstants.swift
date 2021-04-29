@@ -23,6 +23,9 @@ enum APIConstants {
         static let registerUser = userEndpoint + "/signUp"
         static let loginUser = userEndpoint + "/login"
         
+        static let forgotPassword = userEndpoint + "/forgotPassword"
+        
+        
     }
     
     struct Parameters {

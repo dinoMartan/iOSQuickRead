@@ -15,8 +15,22 @@
                     <view key="view" contentMode="scaleToFill" id="DmC-WL-4UF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTl-4J-oub">
+                                <rect key="frame" x="158.5" y="427.5" width="97" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="LOGOUT"/>
+                                <connections>
+                                    <action selector="didTapLogoutButton:" destination="VBf-nY-mKC" eventType="touchUpInside" id="WVg-mH-OhP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3DC-ps-ttp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cTl-4J-oub" firstAttribute="centerX" secondItem="DmC-WL-4UF" secondAttribute="centerX" id="Etf-7d-CjA"/>
+                            <constraint firstItem="cTl-4J-oub" firstAttribute="centerY" secondItem="DmC-WL-4UF" secondAttribute="centerY" id="TD9-7p-mk7"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWQ-Kh-yFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

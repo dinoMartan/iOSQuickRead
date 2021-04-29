@@ -24,8 +24,10 @@ class ArticlesViewController: UIViewController {
     //MARK: - IBOutlets
     
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+
     @IBOutlet weak var activityIndicatorView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var sourcePickerView: UIPickerView!
     
     //MARK: - Private properties
@@ -52,6 +54,7 @@ class ArticlesViewController: UIViewController {
     }
     
     private func setupView() {
+        showActivityIndicator()
         prepareSources()
         setTitle()
         fetchArticles()

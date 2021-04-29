@@ -30,7 +30,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
 }
 
 //MARK: - IBActions -
@@ -48,6 +48,10 @@ extension RegisterViewController {
             }
 
         }
+    }
+    
+    @IBAction func didTapAround(_ sender: Any) {
+        view.endEditing(true)
     }
     
 }

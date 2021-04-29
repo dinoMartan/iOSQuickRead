@@ -26,6 +26,8 @@ class TabBarViewController: UITabBarController {
         let homeNavigationController = UINavigationController(rootViewController: homeViewController)
         homeNavigationController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
         homeNavigationController.navigationBar.isHidden = true
+        homeNavigationController.navigationItem.backBarButtonItem?.isEnabled = false
+        homeNavigationController.interactivePopGestureRecognizer?.isEnabled = false
         return homeNavigationController
     }
     
@@ -35,6 +37,8 @@ class TabBarViewController: UITabBarController {
         sportViewController.tabBarItem = UITabBarItem(title: "Sport", image: UIImage(systemName: "house"), tag: 2)
         sportNavigationController.navigationBar.prefersLargeTitles = true
         sportNavigationController.navigationBar.isHidden = true
+        sportNavigationController.navigationItem.backBarButtonItem?.isEnabled = false
+        sportNavigationController.interactivePopGestureRecognizer?.isEnabled = false
         return sportNavigationController
     }
     

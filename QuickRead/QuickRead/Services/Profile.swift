@@ -56,8 +56,11 @@ final class Profile {
         defaults.set(password, forKey: "password")
     }
     
-    func silentLogin(success: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) {
-        guard let username = defaults.string(forKey: "username"), let password = defaults.string(forKey: "password") else { return }
+    func silentLogin(success: @escaping (() -> Void), failure: @escaping ((Error?) -> Void)) {
+        guard let username = defaults.string(forKey: "username"), let password = defaults.string(forKey: "password") else {
+            failure(nil)
+            return
+        }
         APIHandler.shared.loginUser(username: username, password: password) { token in
             if token != nil {
                 self.setToken(token: token!)

@@ -24,6 +24,8 @@
 		3113F09F26359466004E9508 /* GetArticlesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113F09E26359466004E9508 /* GetArticlesResponse.swift */; };
 		3113F0A82635F3D9004E9508 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113F0A62635F3D8004E9508 /* ArticleTableViewCell.swift */; };
 		3113F0A92635F3D9004E9508 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3113F0A72635F3D8004E9508 /* ArticleTableViewCell.xib */; };
+		317A5648263B08C70000DBE5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317A5647263B08C60000DBE5 /* Launch Screen.storyboard */; };
+		317A564C263B2CF50000DBE5 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A564B263B2CF50000DBE5 /* ResetPasswordViewController.swift */; };
 		31B8FF6726371739002DA2DC /* OtherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF6626371739002DA2DC /* OtherTableViewCell.swift */; };
 		31B8FF6C2637218D002DA2DC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B8FF6B2637218D002DA2DC /* Login.storyboard */; };
 		31B8FF6F2637219B002DA2DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF6E2637219B002DA2DC /* LoginViewController.swift */; };
@@ -63,6 +65,8 @@
 		3113F09E26359466004E9508 /* GetArticlesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArticlesResponse.swift; sourceTree = "<group>"; };
 		3113F0A62635F3D8004E9508 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		3113F0A72635F3D8004E9508 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		317A5647263B08C60000DBE5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		317A564B263B2CF50000DBE5 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		31B8FF6626371739002DA2DC /* OtherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTableViewCell.swift; sourceTree = "<group>"; };
 		31B8FF6B2637218D002DA2DC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		31B8FF6E2637219B002DA2DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			children = (
 				3113F04526346BD5004E9508 /* Menu.storyboard */,
 				3113F05426346CF8004E9508 /* TabBarViewController.swift */,
+				317A5647263B08C60000DBE5 /* Launch Screen.storyboard */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				31B8FF6E2637219B002DA2DC /* LoginViewController.swift */,
 				31B8FF712637245D002DA2DC /* ForgotPasswordViewController.swift */,
 				31B8FF7426372935002DA2DC /* RegisterViewController.swift */,
+				317A564B263B2CF50000DBE5 /* ResetPasswordViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				3113F04B26346C99004E9508 /* Sport.storyboard in Resources */,
 				31B8FFA12639C9B7002DA2DC /* Profile.storyboard in Resources */,
 				3113F0A92635F3D9004E9508 /* ArticleTableViewCell.xib in Resources */,
+				317A5648263B08C70000DBE5 /* Launch Screen.storyboard in Resources */,
 				3113F04626346BD5004E9508 /* Menu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +451,7 @@
 				31B8FF7B263735BB002DA2DC /* Profile.swift in Sources */,
 				31B8FF6726371739002DA2DC /* OtherTableViewCell.swift in Sources */,
 				31B8FF7826372F55002DA2DC /* StringCheck.swift in Sources */,
+				317A564C263B2CF50000DBE5 /* ResetPasswordViewController.swift in Sources */,
 				31B8FF8C26387A9A002DA2DC /* ArticlesViewController.swift in Sources */,
 				3113F09F26359466004E9508 /* GetArticlesResponse.swift in Sources */,
 				3113F05826346D74004E9508 /* HomeViewController.swift in Sources */,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5D6-7h-hIv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="vWf-PY-7tz">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -27,7 +27,7 @@
                                             <rect key="frame" x="10" y="10" width="394" height="90"/>
                                         </pickerView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="on0-01-Spg" secondAttribute="trailing" constant="10" id="J0L-wc-Esh"/>
                                         <constraint firstItem="on0-01-Spg" firstAttribute="leading" secondItem="vWf-PY-7tz" secondAttribute="leading" constant="10" id="bBL-nY-uU7"/>
@@ -36,31 +36,36 @@
                                     </constraints>
                                 </view>
                             </tableView>
-                            <view contentMode="scaleToFill" id="KI8-ol-NSK">
-                                <rect key="frame" x="0.0" y="157" width="414" height="739"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYq-1S-0Dm">
+                                <rect key="frame" x="0.0" y="154" width="414" height="708"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="Dw9-0t-Pdk">
-                                        <rect key="frame" x="156" y="343" width="102" height="53"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="nMI-kg-R9u">
+                                        <rect key="frame" x="188.5" y="335.5" width="37" height="37"/>
                                     </activityIndicatorView>
                                 </subviews>
-                                <viewLayoutGuide key="safeArea" id="pUm-sg-E9N"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="nMI-kg-R9u" firstAttribute="centerY" secondItem="iYq-1S-0Dm" secondAttribute="centerY" id="R5P-RF-dCf"/>
+                                    <constraint firstItem="nMI-kg-R9u" firstAttribute="centerX" secondItem="iYq-1S-0Dm" secondAttribute="centerX" id="Z8S-4J-pt3"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l4k-SO-txe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="l4k-SO-txe" firstAttribute="trailing" secondItem="5D6-7h-hIv" secondAttribute="trailing" id="9Bg-wR-2Ix"/>
                             <constraint firstItem="5D6-7h-hIv" firstAttribute="top" secondItem="l4k-SO-txe" secondAttribute="top" id="IpN-FM-XYK"/>
+                            <constraint firstItem="iYq-1S-0Dm" firstAttribute="leading" secondItem="l4k-SO-txe" secondAttribute="leading" id="SW7-cf-yYp"/>
+                            <constraint firstItem="iYq-1S-0Dm" firstAttribute="top" secondItem="l4k-SO-txe" secondAttribute="top" constant="110" id="UeK-FQ-tu0"/>
+                            <constraint firstItem="l4k-SO-txe" firstAttribute="bottom" secondItem="iYq-1S-0Dm" secondAttribute="bottom" id="ZJY-9D-gAW"/>
+                            <constraint firstItem="l4k-SO-txe" firstAttribute="trailing" secondItem="iYq-1S-0Dm" secondAttribute="trailing" id="cIa-nX-LPP"/>
                             <constraint firstAttribute="bottom" secondItem="5D6-7h-hIv" secondAttribute="bottom" id="uxN-xz-WxL"/>
                             <constraint firstItem="5D6-7h-hIv" firstAttribute="leading" secondItem="l4k-SO-txe" secondAttribute="leading" id="wsS-Ry-UeI"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="Dw9-0t-Pdk" id="m8D-1L-vuV"/>
-                        <outlet property="activityIndicatorView" destination="KI8-ol-NSK" id="uoP-6d-TjH"/>
+                        <outlet property="activityIndicator" destination="nMI-kg-R9u" id="zKh-Ku-uvK"/>
+                        <outlet property="activityIndicatorView" destination="iYq-1S-0Dm" id="xOk-EU-Mds"/>
                         <outlet property="sourcePickerView" destination="on0-01-Spg" id="wy2-UO-bI6"/>
                         <outlet property="tableView" destination="5D6-7h-hIv" id="RZm-CD-Y6Z"/>
                     </connections>
@@ -71,7 +76,10 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
