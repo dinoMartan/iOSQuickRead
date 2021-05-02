@@ -18,26 +18,26 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7N5-wB-HYM">
-                        <rect key="frame" x="25" y="65" width="364" height="235"/>
+                        <rect key="frame" x="25" y="90" width="364" height="210"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="uAg-FO-4Rl">
-                        <rect key="frame" x="15" y="5" width="384" height="50"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uAg-FO-4Rl">
+                        <rect key="frame" x="15" y="5" width="384" height="75"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cph-MW-WUV">
-                        <rect key="frame" x="35" y="310" width="344" height="20.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cph-MW-WUV">
+                        <rect key="frame" x="35" y="310" width="344" height="18"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dim-dW-CjK">
-                                <rect key="frame" x="0.0" y="0.0" width="167" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="0.0" width="161.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njw-7g-LmB">
-                                <rect key="frame" x="177" y="0.0" width="167" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="166.5" y="0.0" width="177.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -65,7 +65,7 @@
                         </subviews>
                     </stackView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nM-Jz-WDR">
-                        <rect key="frame" x="15" y="335.5" width="384" height="319.5"/>
+                        <rect key="frame" x="15" y="333" width="384" height="322"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
@@ -80,7 +80,7 @@
                     <constraint firstItem="cph-MW-WUV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="JPN-eT-3uh"/>
                     <constraint firstItem="7N5-wB-HYM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="JdP-Ao-cdy"/>
                     <constraint firstAttribute="trailingMargin" secondItem="cph-MW-WUV" secondAttribute="trailing" constant="15" id="Jhn-Dk-29a"/>
-                    <constraint firstItem="7N5-wB-HYM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="65" id="KyY-rU-0Tc"/>
+                    <constraint firstItem="7N5-wB-HYM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="90" id="KyY-rU-0Tc"/>
                     <constraint firstItem="1nM-Jz-WDR" firstAttribute="top" secondItem="cph-MW-WUV" secondAttribute="bottom" constant="5" id="KzC-Cb-Rks"/>
                     <constraint firstAttribute="bottom" secondItem="9qf-Ss-JHi" secondAttribute="bottom" constant="10" id="L6R-AO-IOK"/>
                     <constraint firstItem="9qf-Ss-JHi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="UG7-Q6-QT0"/>

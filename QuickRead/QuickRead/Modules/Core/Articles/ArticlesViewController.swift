@@ -200,6 +200,7 @@ extension ArticlesViewController: ArticleTableViewCellDelegate {
     
     func didTapShowArticle(url: URL) {
         let safariViewController = SFSafariViewController(url: url)
+        safariViewController.view.backgroundColor = .systemBackground
         present(safariViewController, animated: true, completion: nil)
     }
     

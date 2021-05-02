@@ -37,7 +37,7 @@ class ArticleTableViewCell: UITableViewCell {
     func configureCell(article: Article) {
         self.article = article
         articleImageView.sd_setImage(with: URL(string: article.imageURL), completed: nil)
-        articleTitleLabel.text = article.title
+        articleTitleLabel.text = article.title.replacingOccurrences(of: #"\"#, with: "")
         articleAuthorLabel.text = article.author
         articlePublishDateLabel.text = article.publishDate
         articleTextView.text = article.summary
