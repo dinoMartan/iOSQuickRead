@@ -54,6 +54,7 @@ extension LoginViewController {
                 menuViewController.modalPresentationStyle = .fullScreen
                 self.present(menuViewController, animated: true, completion: nil)
             } failure: { error in
+                // Alerter.showOneButtonAlert(on: self, title: .oops, error: error, actionTitle: .ok, handler: nil)
                 // to do - handle error
             }
         }
@@ -83,6 +84,7 @@ extension LoginViewController: RegisterViewControllerDelegate {
             menuViewController.modalPresentationStyle = .fullScreen
             self.present(menuViewController, animated: true, completion: nil)
         } failure: { error in
+            // Alerter.showOneButtonAlert(on: self, title: .error, error: error, actionTitle: .ok, handler: nil)
             // to do - handle error
         }
 
@@ -94,14 +96,7 @@ extension LoginViewController: ForgotPasswordViewControllerDelegate {
     
     func showPasswordReset() {
         guard let resetPasswordViewController = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(identifier: "resetPassword") as? ResetPasswordViewController else { return }
-        resetPasswordViewController.delegate = self
         self.present(resetPasswordViewController, animated: true, completion: nil)
     }
-    
-}
-
-extension LoginViewController: ResetPasswordViewControllerDelegate {
-    
-  
     
 }

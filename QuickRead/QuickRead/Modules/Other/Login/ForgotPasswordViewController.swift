@@ -17,7 +17,8 @@ class ForgotPasswordViewController: UIViewController {
     
     //MARK: - IBOutlets
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var loadingView: UIView!
     
     //MARK: - Public properties
     
@@ -27,6 +28,11 @@ class ForgotPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    private func setupView() {
+        loadingView.alpha = 0
     }
 
 }
@@ -35,29 +41,39 @@ class ForgotPasswordViewController: UIViewController {
 
 private extension ForgotPasswordViewController {
     
+    private func showLoadingAnimation() {
+        UIView.animate(withDuration: 0.5) {
+            self.loadingView.alpha = 1
+        }
+    }
+    
+    private func hideLoadingAnimation() {
+        UIView.animate(withDuration: 0.5) {
+            self.loadingView.alpha = 0
+        }
+    }
+    
     private func forgotPassword() {
         guard checkInputs() else { return }
         sendEmail()
     }
     
     private func sendEmail() {
+        showLoadingAnimation()
         APIHandler.shared.forgotPassword(email: emailTextField.text!) {
+            self.hideLoadingAnimation()
             self.dismiss(animated: true, completion: nil)
             self.delegate?.showPasswordReset()
         } failure: { error in
-            let alert = UIAlertController(title: "Something went wrong", message: error.localizedDescription, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.hideLoadingAnimation()
+            Alerter.showOneButtonAlert(on: self, title: .oops, error: error, actionTitle: .ok, handler: nil)
         }
 
     }
     
     private func checkInputs() -> Bool {
         guard let email = emailTextField.text, StringCheck.checkStrings(strings: [email]) else {
-            // to do - alert
-            let alert = UIAlertController(title: "Error", message: "Make sure to input your email.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            Alerter.showOneButtonAlert(on: self, title: .oops, message: .checkFields, actionTitle: .ok, handler: nil)
             return false
         }
         return true

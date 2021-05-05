@@ -25,10 +25,10 @@ class ArticlesViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
 
-    @IBOutlet weak var activityIndicatorView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var activityIndicatorView: UIView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var sourcePickerView: UIPickerView!
+    @IBOutlet private weak var sourcePickerView: UIPickerView!
     
     //MARK: - Private properties
     
@@ -78,7 +78,7 @@ private extension ArticlesViewController {
                 self.tableView.reloadData()
                 self.hideActivityIndicator()
             } failure: { error in
-                // to do - handle error
+                //Alerter.showOneButtonAlert(on: self, title: .error, error: error, actionTitle: .ok, handler: nil)
             }
         }
         

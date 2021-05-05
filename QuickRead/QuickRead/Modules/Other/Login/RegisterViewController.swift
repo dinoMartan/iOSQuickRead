@@ -17,9 +17,9 @@ class RegisterViewController: UIViewController {
     
     //MARK: - IBOutlets
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var usernameTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     
     //MARK: - Public properties
     
@@ -44,7 +44,7 @@ extension RegisterViewController {
                 self.delegate?.didRegister(username: username, password: password)
                 self.dismiss(animated: true, completion: nil)
             } failure: { error in
-                // to do - error handle
+                Alerter.showOneButtonAlert(on: self, title: .oops, error: error, actionTitle: .ok, handler: nil)
             }
 
         }

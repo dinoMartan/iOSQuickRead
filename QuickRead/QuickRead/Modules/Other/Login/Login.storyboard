@@ -196,12 +196,29 @@
                                     <constraint firstAttribute="width" constant="250" id="OBH-fi-PsU"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0w-tQ-nWH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zPD-hU-ZuG">
+                                        <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zPD-hU-ZuG" firstAttribute="centerY" secondItem="s0w-tQ-nWH" secondAttribute="centerY" id="xo6-gL-t90"/>
+                                    <constraint firstItem="zPD-hU-ZuG" firstAttribute="centerX" secondItem="s0w-tQ-nWH" secondAttribute="centerX" id="yLw-0H-M1a"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nV5-Nq-kya"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="s0w-tQ-nWH" firstAttribute="top" secondItem="nV5-Nq-kya" secondAttribute="top" id="1Bc-Rc-cGL"/>
                             <constraint firstItem="Ovr-o5-aPe" firstAttribute="centerY" secondItem="Uub-qg-whY" secondAttribute="centerY" id="O6J-r6-cku"/>
+                            <constraint firstItem="s0w-tQ-nWH" firstAttribute="leading" secondItem="nV5-Nq-kya" secondAttribute="leading" id="dez-g6-W9l"/>
+                            <constraint firstItem="nV5-Nq-kya" firstAttribute="bottom" secondItem="s0w-tQ-nWH" secondAttribute="bottom" id="gRx-cc-K4f"/>
+                            <constraint firstItem="nV5-Nq-kya" firstAttribute="trailing" secondItem="s0w-tQ-nWH" secondAttribute="trailing" id="jey-t2-LCd"/>
                             <constraint firstItem="Ovr-o5-aPe" firstAttribute="centerX" secondItem="Uub-qg-whY" secondAttribute="centerX" id="m6n-b1-CNZ"/>
                         </constraints>
                         <connections>
@@ -210,6 +227,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="yWY-hQ-aEi" id="2LZ-CY-kXJ"/>
+                        <outlet property="loadingView" destination="s0w-tQ-nWH" id="Evr-Hp-nbP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRd-Fx-hhh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -24,6 +24,8 @@ enum APIConstants {
         static let loginUser = userEndpoint + "/login"
         
         static let forgotPassword = userEndpoint + "/forgotPassword"
+        static let validateResetToken = userEndpoint + "/validateResetToken"
+        static let changePassword = userEndpoint + "/changePassword"
         
         
     }

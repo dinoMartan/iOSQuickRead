@@ -26,6 +26,9 @@
 		3113F0A92635F3D9004E9508 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3113F0A72635F3D8004E9508 /* ArticleTableViewCell.xib */; };
 		317A5648263B08C70000DBE5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317A5647263B08C60000DBE5 /* Launch Screen.storyboard */; };
 		317A564C263B2CF50000DBE5 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A564B263B2CF50000DBE5 /* ResetPasswordViewController.swift */; };
+		3184079426414DB900F8FB20 /* Alerter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3184079326414DB900F8FB20 /* Alerter.swift */; };
+		318407972642A7DD00F8FB20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 318407962642A7DD00F8FB20 /* GoogleService-Info.plist */; };
+		318407A42642E0E800F8FB20 /* QuickReadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318407A32642E0E800F8FB20 /* QuickReadTests.swift */; };
 		31B8FF6726371739002DA2DC /* OtherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF6626371739002DA2DC /* OtherTableViewCell.swift */; };
 		31B8FF6C2637218D002DA2DC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B8FF6B2637218D002DA2DC /* Login.storyboard */; };
 		31B8FF6F2637219B002DA2DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FF6E2637219B002DA2DC /* LoginViewController.swift */; };
@@ -43,6 +46,16 @@
 		31B8FFA42639C9C3002DA2DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8FFA32639C9C3002DA2DC /* ProfileViewController.swift */; };
 		CC5979ECC103E489728F4D67 /* Pods_QuickRead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D356F814B626C0D28D13BA /* Pods_QuickRead.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		318407A62642E0E800F8FB20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3113F01526344FD0004E9508 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3113F01C26344FD1004E9508;
+			remoteInfo = QuickRead;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1AA2898176E34E64EE39D7C2 /* Pods-QuickRead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickRead.release.xcconfig"; path = "Target Support Files/Pods-QuickRead/Pods-QuickRead.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +80,11 @@
 		3113F0A72635F3D8004E9508 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		317A5647263B08C60000DBE5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		317A564B263B2CF50000DBE5 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		3184079326414DB900F8FB20 /* Alerter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerter.swift; sourceTree = "<group>"; };
+		318407962642A7DD00F8FB20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		318407A12642E0E800F8FB20 /* QuickReadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickReadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		318407A32642E0E800F8FB20 /* QuickReadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickReadTests.swift; sourceTree = "<group>"; };
+		318407A52642E0E800F8FB20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31B8FF6626371739002DA2DC /* OtherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTableViewCell.swift; sourceTree = "<group>"; };
 		31B8FF6B2637218D002DA2DC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		31B8FF6E2637219B002DA2DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +113,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3184079E2642E0E800F8FB20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -110,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				3113F01F26344FD1004E9508 /* QuickRead */,
+				318407A22642E0E800F8FB20 /* QuickReadTests */,
 				3113F01E26344FD1004E9508 /* Products */,
 				364141DB4E947101ADA11CEF /* Pods */,
 				17CDBD7A41193AB470533123 /* Frameworks */,
@@ -120,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				3113F01D26344FD1004E9508 /* QuickRead.app */,
+				318407A12642E0E800F8FB20 /* QuickReadTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +174,7 @@
 		3113F03626345023004E9508 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3184079226414D6000F8FB20 /* Alerts */,
 				31B8FF802638704A002DA2DC /* Data */,
 				3113F09D26359446004E9508 /* Models */,
 				3113F09926358DD9004E9508 /* Constants */,
@@ -178,6 +206,7 @@
 		3113F03926345033004E9508 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				318407962642A7DD00F8FB20 /* GoogleService-Info.plist */,
 				3113F02026344FD1004E9508 /* AppDelegate.swift */,
 				3113F02926344FD3004E9508 /* Assets.xcassets */,
 				3113F02E26344FD3004E9508 /* Info.plist */,
@@ -272,6 +301,23 @@
 			path = Table;
 			sourceTree = "<group>";
 		};
+		3184079226414D6000F8FB20 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				3184079326414DB900F8FB20 /* Alerter.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		318407A22642E0E800F8FB20 /* QuickReadTests */ = {
+			isa = PBXGroup;
+			children = (
+				318407A32642E0E800F8FB20 /* QuickReadTests.swift */,
+				318407A52642E0E800F8FB20 /* Info.plist */,
+			);
+			path = QuickReadTests;
+			sourceTree = "<group>";
+		};
 		31B8FF692637217A002DA2DC /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +395,24 @@
 			productReference = 3113F01D26344FD1004E9508 /* QuickRead.app */;
 			productType = "com.apple.product-type.application";
 		};
+		318407A02642E0E800F8FB20 /* QuickReadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 318407AA2642E0E800F8FB20 /* Build configuration list for PBXNativeTarget "QuickReadTests" */;
+			buildPhases = (
+				3184079D2642E0E800F8FB20 /* Sources */,
+				3184079E2642E0E800F8FB20 /* Frameworks */,
+				3184079F2642E0E800F8FB20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				318407A72642E0E800F8FB20 /* PBXTargetDependency */,
+			);
+			name = QuickReadTests;
+			productName = QuickReadTests;
+			productReference = 318407A12642E0E800F8FB20 /* QuickReadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -360,6 +424,10 @@
 				TargetAttributes = {
 					3113F01C26344FD1004E9508 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					318407A02642E0E800F8FB20 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 3113F01C26344FD1004E9508;
 					};
 				};
 			};
@@ -377,6 +445,7 @@
 			projectRoot = "";
 			targets = (
 				3113F01C26344FD1004E9508 /* QuickRead */,
+				318407A02642E0E800F8FB20 /* QuickReadTests */,
 			);
 		};
 /* End PBXProject section */
@@ -394,8 +463,16 @@
 				3113F04B26346C99004E9508 /* Sport.storyboard in Resources */,
 				31B8FFA12639C9B7002DA2DC /* Profile.storyboard in Resources */,
 				3113F0A92635F3D9004E9508 /* ArticleTableViewCell.xib in Resources */,
+				318407972642A7DD00F8FB20 /* GoogleService-Info.plist in Resources */,
 				317A5648263B08C70000DBE5 /* Launch Screen.storyboard in Resources */,
 				3113F04626346BD5004E9508 /* Menu.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3184079F2642E0E800F8FB20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +536,7 @@
 				3113F06626358358004E9508 /* OtherViewController.swift in Sources */,
 				3113F0A82635F3D9004E9508 /* ArticleTableViewCell.swift in Sources */,
 				31B8FF7526372935002DA2DC /* RegisterViewController.swift in Sources */,
+				3184079426414DB900F8FB20 /* Alerter.swift in Sources */,
 				3113F06E263588DB004E9508 /* APIHandler.swift in Sources */,
 				3113F040263451CF004E9508 /* UIStoryboardExtension.swift in Sources */,
 				31B8FF722637245D002DA2DC /* ForgotPasswordViewController.swift in Sources */,
@@ -475,7 +553,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3184079D2642E0E800F8FB20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				318407A42642E0E800F8FB20 /* QuickReadTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		318407A72642E0E800F8FB20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3113F01C26344FD1004E9508 /* QuickRead */;
+			targetProxy = 318407A62642E0E800F8FB20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3113F02F26344FD3004E9508 /* Debug */ = {
@@ -634,6 +728,46 @@
 			};
 			name = Release;
 		};
+		318407A82642E0E800F8FB20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P675Y7Z4V8;
+				INFOPLIST_FILE = QuickReadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dmartan.QuickReadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickRead.app/QuickRead";
+			};
+			name = Debug;
+		};
+		318407A92642E0E800F8FB20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P675Y7Z4V8;
+				INFOPLIST_FILE = QuickReadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dmartan.QuickReadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickRead.app/QuickRead";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -651,6 +785,15 @@
 			buildConfigurations = (
 				3113F03226344FD3004E9508 /* Debug */,
 				3113F03326344FD3004E9508 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		318407AA2642E0E800F8FB20 /* Build configuration list for PBXNativeTarget "QuickReadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				318407A82642E0E800F8FB20 /* Debug */,
+				318407A92642E0E800F8FB20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

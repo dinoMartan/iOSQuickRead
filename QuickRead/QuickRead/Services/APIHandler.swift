@@ -80,6 +80,39 @@ final class APIHandler {
             }
     }
     
+    func validateResetToken(token: String, success: @escaping ((String?) -> Void), failure: @escaping ((Error) -> Void)) {
+        
+        let parameters = [ "token": token ]
+        
+        alamofire.request(APIConstants.Urls.validateResetToken, method: .post, parameters: parameters)
+            .responseJSON { response in
+                switch response.result {
+                case .success(_):
+                    success(response.response?.headers["Authorization"])
+                case .failure(let error):
+                    failure(error)
+                }
+            }
+    }
+    
+    func changePassword(password: String, success: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) {
+        let parameters = [
+            "newPassword": password,
+            "confirmPassword": password
+        ]
+    
+        alamofire.request(APIConstants.Urls.changePassword, method: .put, parameters: parameters, headers: self.headers)
+            .responseJSON { response in
+                debugPrint(response)
+                switch response.result {
+                case .success(_):
+                    break
+                case .failure(let error):
+                    failure(error)
+                }
+            }
+    }
+    
     //MARK: - Articles
     
     func getAllArticles(success: @escaping ((GetArticlesResponse) -> Void), failure: @escaping ((Error?) -> Void)) {
