@@ -19,6 +19,7 @@ class ForgotPasswordViewController: UIViewController {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var loadingView: UIView!
+    @IBOutlet weak var loadingActivityView: UIActivityIndicatorView!
     
     //MARK: - Public properties
     
@@ -42,12 +43,14 @@ class ForgotPasswordViewController: UIViewController {
 private extension ForgotPasswordViewController {
     
     private func showLoadingAnimation() {
+        loadingActivityView.startAnimating()
         UIView.animate(withDuration: 0.5) {
             self.loadingView.alpha = 1
         }
     }
     
     private func hideLoadingAnimation() {
+        loadingActivityView.stopAnimating()
         UIView.animate(withDuration: 0.5) {
             self.loadingView.alpha = 0
         }

@@ -14,11 +14,14 @@ class ResetPasswordViewController: UIViewController {
     @IBOutlet private weak var validationCodeTextField: UITextField!
     @IBOutlet private weak var newPasswordTextField: UITextField!
     @IBOutlet private weak var confirmedPasswordTextField: UITextField!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingView.alpha = 0
     }
     
 }
@@ -27,32 +30,50 @@ class ResetPasswordViewController: UIViewController {
 
 private extension ResetPasswordViewController {
     
+    private func showLoadingView() {
+        activityView.startAnimating()
+        UIView.animate(withDuration: 0.5) {
+            self.loadingView.alpha = 1
+        }
+    }
+    
+    private func hideLoadingView() {
+        activityView.stopAnimating()
+        UIView.animate(withDuration: 0.5) {
+            self.loadingView.alpha = 0
+        }
+    }
+    
     private func resetPassword() {
         guard checkFields() else { return }
+        showLoadingView()
         validateCode {
-            self.executePasswordChange()
-        } failure: {
-            Alerter.showOneButtonAlert(on: self, title: .wrongCode, message: .wrongCode, actionTitle: .ok, handler: nil)
+            self.executePasswordChange {
+                Alerter.showOneButtonAlert(on: self, title: .success, message: .passwordChanged, actionTitle: .ok) { _ in
+                    self.hideLoadingView()
+                    self.dismiss(animated: true, completion: nil)
+                }
+            } failure: { error in
+                self.hideLoadingView()
+                Alerter.showOneButtonAlert(on: self, title: .oops, error: error, actionTitle: .ok, handler: nil)
+            }
         }
     }
     
-    private func executePasswordChange() {
+    private func executePasswordChange(success: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) {
         APIHandler.shared.changePassword(password: newPasswordTextField.text!) {
-            Alerter.showOneButtonAlert(on: self, title: .success, message: .passwordChanged, actionTitle: .ok) { _ in
-                self.dismiss(animated: true, completion: nil)
-            }
+            success()
         } failure: { error in
-            Alerter.showOneButtonAlert(on: self, title: .oops, error: error, actionTitle: .ok, handler: nil)
+            failure(error)
         }
     }
     
-    private func validateCode(success: @escaping (() -> Void), failure: @escaping (() -> Void)) {
+    private func validateCode(success: @escaping (() -> Void)) {
         APIHandler.shared.validateResetToken(token: validationCodeTextField.text!) { authorizationToken in
-            guard let token = authorizationToken else {
+            if authorizationToken == nil {
                 Alerter.showOneButtonAlert(on: self, title: .error, message: .wrongResponse, actionTitle: .ok, handler: nil)
-                return
             }
-            Profile.shared.setToken(token: token)
+            Profile.shared.setToken(token: authorizationToken!)
             success()
         } failure: { error in
             Alerter.showOneButtonAlert(on: self, title: .oops, error: error, actionTitle: .ok, handler: nil)
@@ -60,7 +81,7 @@ private extension ResetPasswordViewController {
     }
     
     private func checkFields() -> Bool {
-        guard let code = validationCodeTextField.text, let password = newPasswordTextField.text, let confirmedPassword = confirmedPasswordTextField.text, StringCheck.checkStrings(strings: [code, password, confirmedPassword]), password != confirmedPassword else {
+        guard let code = validationCodeTextField.text, let password = newPasswordTextField.text, let confirmedPassword = confirmedPasswordTextField.text, StringCheck.checkStrings(strings: [code, password, confirmedPassword]), password == confirmedPassword else {
             Alerter.showOneButtonAlert(on: self, title: .oops, message: .checkFields, actionTitle: .ok, handler: nil)
             return false
         }

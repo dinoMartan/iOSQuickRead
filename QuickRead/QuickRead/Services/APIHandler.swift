@@ -54,6 +54,7 @@ final class APIHandler {
         ]
         
         alamofire.request(APIConstants.Urls.loginUser, method: .post, parameters: parameters)
+            .validate()
             .responseJSON { response in
                 switch response.result {
                 case .success(_):
@@ -85,7 +86,8 @@ final class APIHandler {
         let parameters = [ "token": token ]
         
         alamofire.request(APIConstants.Urls.validateResetToken, method: .post, parameters: parameters)
-            .responseJSON { response in
+            .validate()
+            .response { response in
                 switch response.result {
                 case .success(_):
                     success(response.response?.headers["Authorization"])
@@ -102,11 +104,11 @@ final class APIHandler {
         ]
     
         alamofire.request(APIConstants.Urls.changePassword, method: .put, parameters: parameters, headers: self.headers)
+            .validate()
             .responseJSON { response in
-                debugPrint(response)
                 switch response.result {
                 case .success(_):
-                    break
+                    success()
                 case .failure(let error):
                     failure(error)
                 }
