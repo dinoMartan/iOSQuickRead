@@ -71,7 +71,6 @@ private extension ForgotPasswordViewController {
             self.hideLoadingAnimation()
             Alerter.showOneButtonAlert(on: self, title: .oops, error: error, actionTitle: .ok, handler: nil)
         }
-
     }
     
     private func checkInputs() -> Bool {
